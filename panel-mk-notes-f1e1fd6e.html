@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mk体育 — 叙事式介绍页面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      background-color: #f1f4f8;
+      color: #1e2a3a;
+    }
+
+    /* 深色头图 hero */
+    .hero {
+      background: linear-gradient(135deg, #0a1922 0%, #112a38 50%, #1b3b4c 100%);
+      color: #e4edf2;
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #7fb3d0, #b3d9e8, #7fb3d0, transparent);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 680px;
+      margin: 0 auto;
+      color: #b9d0dd;
+    }
+
+    /* 正文浅色区域 */
+    .content {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 3rem 1.8rem 4rem;
+    }
+
+    /* 承接段落 */
+    .intro-text {
+      font-size: 1.1rem;
+      margin-bottom: 2.2rem;
+      border-left: 4px solid #2a6a7a;
+      padding-left: 1.2rem;
+      color: #1d3443;
+    }
+
+    .intro-text strong {
+      color: #0f4a5c;
+      font-weight: 600;
+    }
+
+    /* 特点卡片列表 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0 3rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 1.6rem 1.4rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 20, 30, 0.06);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #dfe8ef;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 30, 40, 0.10);
+      transform: translateY(-3px);
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0e3a49;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.3px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #2f4456;
+      line-height: 1.5;
+    }
+
+    /* 温和结尾区块 */
+    .closing-note {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #d4dfe8;
+      font-size: 1rem;
+      color: #2d4a5e;
+      text-align: center;
+    }
+
+    .closing-note a {
+      color: #1b6f85;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #6d9eb0;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .closing-note a:hover {
+      color: #043b4b;
+      border-bottom-color: #043b4b;
+    }
+
+    /* 链接强调色（全局） */
+    a {
+      color: #1b6f85;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #043b4b;
+    }
+
+    /* 辅助内容——场景小段落 */
+    .scene-block {
+      background: #eff4f9;
+      padding: 1.6rem 1.8rem;
+      border-radius: 20px;
+      margin: 2.2rem 0 1.8rem;
+    }
+
+    .scene-block p {
+      margin-bottom: 0.6rem;
+    }
+
+    .scene-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .content {
+        padding: 2rem 1.2rem 3rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+      }
+    }
+
+    /* 小间距辅助 */
+    .small-meta {
+      color: #5c768b;
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>从一处赛场到一片生态</h1>
+    <p>叙述一个关于体育内容聚合与信息触达的故事</p>
+  </header>
+
+  <main class="content">
+    <!-- 开场短句 + 承接段落  -->
+    <div class="intro-text">
+      <p>在信息过载的时代，体育爱好者需要的并不是更多数据，而是更清晰的脉络。从赛事动态到深度复盘，从观赛体验到社区讨论，体育内容正在经历一次重组。而<a href="https://panel--mk.com">mk体育</a>所代表的，正是对这种重组的一种回应——用更结构化的方式，将原本散落在不同角落的信息重新编织成可读、可查、可感的叙事。</p>
+    </div>
+
+    <!-- 承接段落：从关键词背后的主题切入  -->
+    <p style="margin-bottom:1.6rem;"><strong>“体育”从来不只是比分与排名的堆叠。</strong> 它背后是人的故事、战术的博弈、训练的逻辑，甚至是文化的碰撞。当我们谈论体育内容时，其实是在谈论如何让这些层次浮现出来。以下四个特点，勾勒出这种信息聚合与表达的基本轮廓。</p>
+
+    <!-- 特点列表 (卡片) -->
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>分层叙事</h3>
+        <p>将赛事、人物、战术、趋势拆解为不同颗粒度的信息模块，便于从任意层面切入。</p>
+      </div>
+      <div class="feature-card">
+        <h3>跨赛事关联</h3>
+        <p>通过主题、数据或人物线索连接不同赛事，呈现体育世界的内部联系。</p>
+      </div>
+      <div class="feature-card">
+        <h3>时间线整合</h3>
+        <p>以时间轴串联关键事件、转会、纪录与里程碑，让动态变为可追溯的脉络。</p>
+      </div>
+      <div class="feature-card">
+        <h3>观点汲取</h3>
+        <p>从专业评论到社区讨论，提炼有代表性的视角，丰富对同一事件的认知。</p>
+      </div>
+    </div>
+
+    <!-- 场景 + 温和的过渡 -->
+    <div class="scene-block">
+      <p>想象这样一个场景：你打开一个页面，不只是看到今晚的赛果，还能顺着一条线索——某位球员的成长时间线、两支球队交手的历史数据变化、或者某个战术体系在不同联赛中的演化——慢慢深入。这种阅读方式，更像是漫步在一个经过梳理的体育图书馆里。</p>
+      <p>每一则信息都不是孤立的，它指向上下文，指向更多值得了解的细节。而这也是<a href="https://panel--mk.com">mk体育</a>试图传递的一种习惯：用更有序的路径，去接近更完整的理解。</p>
+    </div>
+
+    <!-- 温和结尾 / FAQ 摘要风格 -->
+    <div class="closing-note">
+      <p style="margin-bottom:0.8rem;"><strong>一些常见的疑问</strong> · 这种信息聚合是面向资深爱好者还是入门者？——两者皆有。结构化的内容天然支持不同深度的阅读，你可以从短讯开始，也可以深入历史数据。所有内容都以真实信息为基础，不做脱离事实的渲染。</p>
+      <p style="margin-bottom:0.4rem;">体育的世界原本就是丰富且多维的，好的呈现方式应该让它更清晰，而不是更嘈杂。</p>
+      <p class="small-meta">—— 一篇关于内容组织的简单笔记，基于 mk体育 的信息整理思路。</p>
+    </div>
+  </main>
+
+</body>
+</html>
